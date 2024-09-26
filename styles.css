@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: auto auto auto auto; /* Define four rows */
+    grid-template-columns: 1fr; /* Single column layout */
+    height: 100vh;
+}
+
+.header {
+    grid-row: 1 / 2;
+    background-color: lightblue;
+    text-align: center;
+    padding: 20px 0; /* Padding only on top and bottom */
+}
+
+.content {
+    grid-row: 2 / 3;
+    background-color: lightgray;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin: 0; /* Ensure no margin */
+}
+
+.features {
+    grid-row: 3 / 4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0; /* Remove gap between feature blocks */
+    margin: 0; /* No margin between content and features */
+}
+
+.feature {
+    background-color: lightcoral;
+    border: 2px solid black;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-up {
+    grid-row: 4 / 5;
+    background-color: lightgreen;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0; /* Ensure no margin between features and sign-up */
+}
+
+/* Ensure no white space or gaps */
+@media (max-width: 768px) {
+    .features {
+        grid-template-columns: 1fr; /* Stack features vertically on small screens */
+    }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
